@@ -4,7 +4,7 @@ import  { useEffect, useState } from "react";
 import './App.css';
 import Container from '@mui/material/Container'
 import Header from "./Components/Header";
-import Definitions from "./components/Definitions/Definitions";
+import Definitions from "./Components/Definitions/Definitions";
 function App() {
   const [meanings, setmeanings] = useState([]);
   const [word, setword] = useState("");
