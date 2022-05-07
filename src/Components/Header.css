@@ -1,0 +1,37 @@
+.title{
+    font-size: 7vw;
+    background-color:'#141618';
+     text-align: center;
+width: 100%;
+margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+     font-family:'Montserrat';
+}
+.inputs{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.inputs{
+    display: 'flex';
+    justify-content: space-around;
+    width: 100%;
+}
+.search,.language{
+    width: 45%;
+}
+
+@media (max-width:900px)
+{
+    .title{
+        height: 20vw;
+    }
+    .heading{
+        font-size:5vh ;
+    }
+}

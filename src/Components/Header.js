@@ -1,33 +1,73 @@
 import React from 'react'
+import './Header.css'
+import TextField from '@mui/material/TextField'
+import MenuItem from '@mui/material/MenuItem';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import categories from '../Data/category';
 
-import AppBar from '@mui/material/AppBar';
+const darkTheme = createTheme({
+  palette: {
+      primary:{
+main:'#fff',
+      },
 
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+    mode: 'dark',
+  },
+});
 
-
-const Header = ({user}) => {
-  console.log("user",user);
+const Header = ({category,setcategory, word , setword}) => {
+   const handleChange=(lang)=>{
+     setcategory(lang);
+     setword("");
+   }
   return (
-    
-    <AppBar style ={{backgroundColor:'	rgb(48,48,48)' , marginBottom:'100px' ,padding:"15px"}} position="static">
+    <div className = "header" >
+    <div className="title" style ={{backgroundColor:'rgb(48,48,48)', border:'2px solid rgb(48,48,48) '}}>
+    <span className='heading' style={{color:'orange' , fontWeight:500}} >
+    Dict
+    <span style={{color:'orange',fontWeight:600 ,fontSize:'60%'}}>
+    ionary
+    </span>
+     
+     </span>  
+    </div>
+  <div className='inputs'>  
+  <ThemeProvider theme={darkTheme}>
+  <TextField
+  className = "search"
+  label="Search"
+  value ={word}
+  onChange={(e)=> setword(e.target.value) }
+  />
+  <TextField
+  className = "language"
+  select
+  label = "Language"
+  value ={category}
+  onChange={(e)=> handleChange(e.target.value) }
 
-      <Toolbar style ={{display:'flex' , justifyContent:'center',alignItems:'center'  }} position="fixed"  >
-    
-    <Typography style ={{color:'orange',  fontWeight:45 ,fontSize:'30px', fontFamily:'Montserrat'}} >
-     Crypto {" "}
-     <span style={{color:'orange',fontWeight:600 ,fontSize:'35px'}}>
-     Search
-     </span>
-      </Typography>
-
+>
+  {
+      categories.map((option)=>{
+          return (
+            <MenuItem style ={{ fontFamily:'Montserrat'}} key={option.label} value = {option.label} >
+            {option.value}
+          </MenuItem>
+          
+          )
+      })
+  }
   
-    
-   
-      </Toolbar>
-    </AppBar>
  
+</TextField>
+
+
+
+
+  </ThemeProvider>
+  </div>
+    </div>
   )
 }
 
-export default Header
+export default Header;
