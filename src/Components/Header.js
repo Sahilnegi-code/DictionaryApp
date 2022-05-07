@@ -1,5 +1,5 @@
-import React from 'react'
-import './Header.css'
+import React from 'react';
+import './Header.css';
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
@@ -35,7 +35,7 @@ const Header = ({category,setcategory, word , setword}) => {
   <ThemeProvider theme={darkTheme}>
   <TextField
   className = "search"
-  label="Search"
+  label="Search"  
   value ={word}
   onChange={(e)=> setword(e.target.value) }
   />
