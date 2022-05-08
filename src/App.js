@@ -21,7 +21,7 @@ catch(err) {
 }
 useEffect(() => {
   dictionaryApi();
-}, [ word , category , dictionaryApi ])
+}, [ word , category ])
 
 return (
   <>
