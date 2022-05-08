@@ -31,8 +31,7 @@
       "react-app",
       "react-app/jest"
     ]
-    ,
-      "eslint.enable": false
+    
   },
   "browserslist": {
     "production": [
