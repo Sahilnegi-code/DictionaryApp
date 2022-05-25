@@ -3,7 +3,7 @@ import './Header.css';
 import TextField from '@mui/material/TextField'
 import MenuItem from '@mui/material/MenuItem';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
-import categories from '../Data/category';
+
 
 const darkTheme = createTheme({
   palette: {
