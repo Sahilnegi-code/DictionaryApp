@@ -16,10 +16,7 @@ main:'#fff',
 });
 
 const Header = ({ word , setword}) => {
-   const handleChange=(lang)=>{
-     setcategory(lang);
-     setword("");
-   }
+ 
   return (
     <div className = "header" >
     <div className="title" style ={{backgroundColor:'rgb(48,48,48)', border:'2px solid rgb(48,48,48) '}}>
