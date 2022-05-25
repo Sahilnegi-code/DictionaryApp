@@ -8,29 +8,26 @@ import Definitions from "./Components/Definitions/Definitions";
 function App() {
   const [meanings, setmeanings] = useState([]);
   const [word, setword] = useState("");
-  const [category, setcategory] = useState("")
+
 const dictionaryApi = async()=>{
-  try{
-const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${category}/${word}`);
+
+const data = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
 setmeanings(data.data);
 
-}
-catch(err) {
- 
-}
+
 }
 useEffect(() => {
   dictionaryApi();
-}, [ word , category ])
+}, [ word  ])
 
 return (
   <>
   <div className="App" style ={{backgroundColor:'#141618',height :'100vh' , color:'white'}}>
 
   <Container   style ={{display:'flex'  ,flexDirection:'column', height:'100vh'} } >
-  <Header  category={category} setcategory={setcategory} word={word} setword={setword}/>
+  <Header   word={word} setword={setword}/>
   
-       <Definitions word = {word} meanings = {meanings} category = {category} />
+       <Definitions word = {word} meanings = {meanings}  />
   
   </Container>
   
