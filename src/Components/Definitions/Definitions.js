@@ -18,9 +18,7 @@ const Definitions = ({word , meanings , category}) => {
     }
 
     
-    {
-      console.log(meanings[0] && meanings[0].phonetics[0] != null && meanings[0].phonetics[0].audio )
-    }
+   
 
     {
 
@@ -48,11 +46,14 @@ const Definitions = ({word , meanings , category}) => {
                   {
                     item.definitions.map((def)=>{
                       return(
-                       <div className = "singleMean" 
+                   <div className = "singleMean" 
+
                        style={{backgroundColor:'white',color:'black' }}>
                         
-
-                       <b  >{def.definition}</b>
+                       <span   >
+                       <span style ={{color :'black' , fontWeight:'bolder' }}>Meaning  </span>
+                        : {def.definition}
+                       </span>
                        {                        
                          def.example && (
                            <span>
@@ -63,7 +64,7 @@ const Definitions = ({word , meanings , category}) => {
                            )
                           }   
                           
-                          {console.log(def.synonyms)}
+                          
                           {
                             def.synonyms && 
                             (
