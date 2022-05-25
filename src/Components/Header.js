@@ -15,7 +15,7 @@ main:'#fff',
   },
 });
 
-const Header = ({category,setcategory, word , setword}) => {
+const Header = ({ word , setword}) => {
    const handleChange=(lang)=>{
      setcategory(lang);
      setword("");
@@ -39,31 +39,6 @@ const Header = ({category,setcategory, word , setword}) => {
   value ={word}
   onChange={(e)=> setword(e.target.value) }
   />
-  <TextField
-  className = "language"
-  select
-  label = "Language"
-  value ={category}
-  onChange={(e)=> handleChange(e.target.value) }
-
->
-  {
-      categories.map((option)=>{
-          return (
-            <MenuItem style ={{ fontFamily:'Montserrat'}} key={option.label} value = {option.label} >
-            {option.value}
-          </MenuItem>
-          
-          )
-      })
-  }
-  
- 
-</TextField>
-
-
-
-
   </ThemeProvider>
   </div>
     </div>
